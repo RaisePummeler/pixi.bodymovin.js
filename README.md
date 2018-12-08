@@ -51,3 +51,25 @@ app.stage.addChild(anim.group);
 [examples-cloud]:https://jasonchen1982.github.io/pixi.bodymovin.js/examples/ae-cloud/ "pixi.bodymovin examples page of cloud"
 [examples-gift]:https://jasonchen1982.github.io/pixi.bodymovin.js/examples/ae-gift/ "pixi.bodymovin examples page of gift"
 [examples-pop]:https://jasonchen1982.github.io/pixi.bodymovin.js/examples/ae-pop/ "pixi.bodymovin examples page of pop"
+
+# images from spritesheet
+
+```javascript
+PIXI.loader
+  .add([
+      'assets/spritesheet.json'
+  ])
+  .load(function (loader, resources) {
+
+  let array = PIXI.loader.resources['assets/spritesheet.json'].textures;
+
+  const anim = animationManager.parserAnimation({
+      keyframes: 'path/to/bodymovin.json',
+      prefix: '',
+      infinite: false,
+      textures: array
+  });
+  
+})
+
+```
