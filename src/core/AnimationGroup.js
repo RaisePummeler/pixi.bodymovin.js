@@ -97,7 +97,7 @@ export default class AnimationGroup {
     const up = asset.u + asset.p;
     const url = asset.up || up;
     let sprite;
-    if(!typeof this.textureArr == Object) {
+    if(!typeof this.textureArr == "object") {
       sprite = Sprite.fromImage(url);
     } else {
       sprite = Sprite.from(this.textureArr[asset.p]);
