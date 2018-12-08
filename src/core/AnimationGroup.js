@@ -55,6 +55,7 @@ export default class AnimationGroup {
     this.fr = this.keyframes.fr;
     this.ip = this.keyframes.ip;
     this.op = this.keyframes.op;
+    this.textureArr = options.textures;
 
     this.tpf = 1000 / this.fr;
     this.tfs = Math.floor(this.op - this.ip);
@@ -95,7 +96,12 @@ export default class AnimationGroup {
     const asset = this.getAssets(layerData.refId);
     const up = asset.u + asset.p;
     const url = asset.up || up;
-    const sprite = Sprite.fromImage(url);
+    let sprite;
+    if(!typeof this.textureArr == Object) {
+      sprite = Sprite.fromImage(url);
+    } else {
+      sprite = Sprite.from(this.textureArr[asset.p]);
+    }  
     return sprite;
   }
 
