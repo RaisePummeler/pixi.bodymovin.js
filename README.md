@@ -17,7 +17,7 @@ npm install -S pixi.bodymovin
 ```javascript
 import { Application } from 'pixi.js';
 import { AnimationManager } from 'pixi.bodymovin';
-import data from './animations/data.js';
+import data from './animations/data.json';
 
 const width = window.innerWidth;
 const height = window.innerHeight;
